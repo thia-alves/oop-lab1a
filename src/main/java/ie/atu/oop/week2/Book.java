@@ -6,12 +6,27 @@ public class Book {
     public int paegcount;
     public boolean available = true;
 
-    public void displayDetails() {
+    public void displayDetails()
+    {
         System.out.println("The title is: " + title);
         System.out.println("The author is: " + author);
         System.out.println("The paegcount is: " + paegcount);
         System.out.println("The available is: " + available);
         System.out.println("\n");
     }
+
+    public void borrowBook()
+    {
+       if (available)
+       {
+           available = false;
+           System.out.println(title + " borrowed successfully");
+       }
+       else
+       {
+           System.out.println(title + " not available");
+       }
+    }
+
 }
 
