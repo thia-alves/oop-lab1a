@@ -29,7 +29,7 @@ public class Main {
         Book book = new Book();
         book.title = title;
         book.author = author;
-        book.paegcount = pageCount;
+        book.pagecount = pageCount;
         book.available = true;
         return book;
     }
