@@ -6,6 +6,10 @@ public class Book {
     public int paegcount;
     public boolean available = true;
 
+
+
+
+
     public void displayDetails()
     {
         System.out.println("The title is: " + title);
