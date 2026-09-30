@@ -14,6 +14,7 @@ public class Book {
         if (author == null || author.isBlank()){
             throw new IllegalArgumentException("author is null or blank");
         }
+
         if (pagecount <= 0)
         {
             throw new IllegalArgumentException("pagecount is negative");

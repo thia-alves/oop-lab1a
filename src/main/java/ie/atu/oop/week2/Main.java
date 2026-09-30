@@ -10,6 +10,7 @@ public class Main {
             Book myBook = new Book("Dune", "Frank", 412);
             System.out.println(myBook.getTitle());
             System.out.println(myBook.getAuthor());
+            System.out.println(myBook.getPagecount());
         }
         catch(IllegalArgumentException ex)
         {
