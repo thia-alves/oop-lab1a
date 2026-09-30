@@ -4,7 +4,7 @@ public class Book {
     private  final String title;
     private final String author;
     private final int pagecount;
-    private final BookStatus status;
+    private  BookStatus status;
 
     public Book(String title, String author, int pagecount)
     {
@@ -45,7 +45,7 @@ public class Book {
         if (status == BookStatus.ON_LOAN ){
             throw new IllegalStateException("Book is already borrowed");
         }
-        BookStatus status = BookStatus.ON_LOAN;
+        status = BookStatus.ON_LOAN;
     }
 }
 
