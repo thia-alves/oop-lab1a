@@ -5,14 +5,22 @@ package ie.atu.oop.week2;
 
 public class Main {
     public static void main(String[] args) {
-        Book book = new Book("Dune", "Frank Herbert", 412);
-        book.BorrowBook();
-        book.ReturnBook();
+        Book FIRST = new Book("Dune", "Frank Herbert", 412);
+        Book SECOND = new Book("De", "Fnk Hrt", 42);
+        LibraryService libraryService = new LibraryService();
+
+        System.out.println(FIRST.getStatus());
+        libraryService.loanBook(FIRST,7);
+        System.out.println(FIRST.getStatus());
+        libraryService.ReturnBook(FIRST);
+        System.out.println(FIRST.getStatus());
+        System.out.println(SECOND.getStatus());
+
         try {
-            book.ReturnBook();
-        } catch (IllegalStateException ex) {
+            libraryService.loanBook(FIRST, 15);
+        } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
         }
-        System.out.println(book.getStatus());
+        System.out.println(FIRST.getStatus());
     }
 }
