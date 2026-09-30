@@ -4,7 +4,7 @@ package ie.atu.oop.week2;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int loanDays = 1;
+        int loanDays = 14;
         Book book = new Book("Dune", "Frank Herbert", 412);
         LibraryService service = new LibraryService();
         try {
