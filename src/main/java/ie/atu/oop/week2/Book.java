@@ -1,9 +1,10 @@
 package ie.atu.oop.week2;
 
 public class Book {
-    private  String title;
-    private String author;
-    private int pagecount;
+    private  final String title;
+    private final String author;
+    private final int pagecount;
+    private final BookStatus status;
 
     public Book(String title, String author, int pagecount)
     {
@@ -14,7 +15,6 @@ public class Book {
         if (author == null || author.isBlank()){
             throw new IllegalArgumentException("author is null or blank");
         }
-
         if (pagecount <= 0)
         {
             throw new IllegalArgumentException("pagecount is negative");
@@ -23,8 +23,12 @@ public class Book {
         this.title = title;
         this.author = author;
         this.pagecount = pagecount;
+        this.status = BookStatus.AVAILABLE;
     }
 
+    public BookStatus getStatus() {
+        return status;
+    }
 
     public String getTitle() {
         return title;
@@ -36,6 +40,12 @@ public class Book {
 
     public int getPagecount() {
         return pagecount;
+    }
+    public void BorrowBook(){
+        if (status == BookStatus.ON_LOAN ){
+            throw new IllegalStateException("Book is already borrowed");
+        }
+        BookStatus status = BookStatus.ON_LOAN;
     }
 }
 
