@@ -1,4 +1,4 @@
-## oop lab1: Java Book Tracker
+## oop lab1: encasulation
 Name: Thiago Alves \
 student ID: G00478189
 ## Run
@@ -6,19 +6,42 @@ Open project in IntelliJ with JKD 21+ and run Main.Java
 
 ## Object model
 Book defines \
-public String title; \
-public String author; \
-public int pagecount; \
-public boolean available; \
-public void displayDetails displays all the details of the book in a readable manner\
-public void borrowBook borrow book changes availability from true to false showing the book has been borrowed \
-private static Book createBook makes a new book and sets its values for title author pagecount and avalibility, and its outside of main because Java doesn't allow you to define a normal method inside another method. \
-firstBook its a copy of the book class that contains four fields \
-secondBook and thirdBook are the same as firstBook
+private String title; \
+private String author; \
+private int pagecount; \
+private void borrowBook borrow book changes availability from true to false showing the book has been borrowed \
+first its a copy of the book class that contains four fields \
+second and is the same as first
+
+public enum BookStatus is where AVALIBILITY AND ON_LOAN are
+public class LibraryService
+private static final int MAX_LOAN_DAYS = 14;
+public void loanBook
+public void ReturnBook
+book.ReturnBook();
+private  BookStatus status;
 
 
-## Verification 
-it first prints out Hello OOP at the top \
-createBook adds the titles author pagecount and avaliblity to firstbook second and third \
-firstBook.displaydetails then displays the title author is its avalible and pagecount, and secondBook and thirdBook does the same \
+
+1
+2 title, author,and pageCount are final because they shouldnt change after the book is created
+3 status isnt final because it changes between AVAILABLE and ON_LOAN
+4 BorrowBook and returnBoo protect the books status
+5  book
+    Checks that title is not null or blank.
+    Checks that author is not null or blank.
+    Checks that pagecount is greater than 0.
+    Checks that the book is not already ON_LOAN before borrowing.
+    Checks that the book is not already AVAILABLE before returning.
+libraryservices
+    Checks that the Book object is not null.
+    Checks that loanDays is between 1 and 14.
+    Calls BorrowBook() after the loan checks pass.
+
+6 A rejected loan happens when the loan is outside 1  to 14 days or the book is already on loan   A rejected return happens when the book is already AVAILABLE.
+7 it goes through beacuse 7 is greater than 1 while day 15 does not go through beacuse 15 is bigger than 14
+
+
+
+## Verification
 firstBook.borrowBook chnages the avalibility of firstBook to false and then displaydetails used again will show that avalibility is false.
