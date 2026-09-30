@@ -44,5 +44,4 @@ libraryservices
 ## maven
 [book-tracker1-1.0-SNAPSHOT.jar](target/book-tracker1-1.0-SNAPSHOT.jar)
 
-## Verification
-firstBook.borrowBook chnages the avalibility of firstBook to false and then displaydetails used again will show that avalibility is false.
+
