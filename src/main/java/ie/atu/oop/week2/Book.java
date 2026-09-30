@@ -6,6 +6,7 @@ public class Book {
     private final int pagecount;
     private  BookStatus status;
 
+
     public Book(String title, String author, int pagecount)
     {
         if (title == null || title.isBlank())
@@ -46,6 +47,12 @@ public class Book {
             throw new IllegalStateException("Book is already borrowed");
         }
         status = BookStatus.ON_LOAN;
+    }
+    public void ReturnBook(){
+        if (status == BookStatus.AVAILABLE){
+            throw new IllegalStateException("Book is already returned");
+        }
+        status = BookStatus.AVAILABLE;
     }
 }
 
