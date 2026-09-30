@@ -4,16 +4,10 @@ package ie.atu.oop.week2;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        LibraryService service = new LibraryService();
-        try {
-            service.loanBook(null, 7);
-        } catch (IllegalArgumentException ex) {
-            System.out.println(ex.getMessage());
-        }
-        try {
-            service.ReturnBook(null);
-        } catch (IllegalArgumentException ex) {
-            System.out.println(ex.getMessage());
-        }
+        Book book = new Book("  Dune  ","  Frank Herbert  ", 412);
+        System.out.println("["+ book.getTitle()+ "]");
+
+        System.out.println("[" +book.getAuthor() + "]");
     }
+
 }
