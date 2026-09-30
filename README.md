@@ -41,7 +41,8 @@ libraryservices
 6 A rejected loan happens when the loan is outside 1  to 14 days or the book is already on loan   A rejected return happens when the book is already AVAILABLE.
 7 it goes through beacuse 7 is greater than 1 while day 15 does not go through beacuse 15 is bigger than 14
 
-
+## maven
+[book-tracker1-1.0-SNAPSHOT.jar](target/book-tracker1-1.0-SNAPSHOT.jar)
 
 ## Verification
 firstBook.borrowBook chnages the avalibility of firstBook to false and then displaydetails used again will show that avalibility is false.
