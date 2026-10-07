@@ -7,21 +7,30 @@ public class LibraryService {
     private static final int MAX_LOAN_DAYS = 14;
     private final List<Book> books = new ArrayList<Book>();
 
-    public void loanBook(Book book, int loanDays){
-        if (book == null) {
-            throw new IllegalArgumentException("Book is null");
-        }
+    public boolean loanBook(String title, int loanDays) {
         if (loanDays < 1 || loanDays > MAX_LOAN_DAYS) {
-            throw new IllegalArgumentException("Loan Days must be between 1 and 14");
+            throw new IllegalArgumentException(
+                    "Loan days must be from 1 to 14");
         }
-        book.BorrowBook();
 
-    }
-    public void ReturnBook(Book book){
+        Book book = findBookByTitle(title);
+
         if (book == null) {
-            throw new IllegalArgumentException("Book is null");
+            return false;
         }
+
+        book.BorrowBook();
+        return true;
+    }
+    public boolean returnBook(String title) {
+        Book book = findBookByTitle(title);
+
+        if (book == null) {
+            return false;
+        }
+
         book.ReturnBook();
+        return true;
     }
     public void addBook(Book book){
         if (book == null) {

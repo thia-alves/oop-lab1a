@@ -4,36 +4,39 @@ package ie.atu.oop.week2;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Book FIRST = new Book("Dune", "Frank Herbert", 412);
-        Book SECOND = new Book("Clean Code", "Fnk Hrt", 42);
-        LibraryService libraryService = new LibraryService();
+        Book dune = new Book(
+                "Dune", "Frank Herbert", 412);
+        Book nineteenEightyFour = new Book(
+                "1984", "George Orwell", 328);
+        Book cleanCode = new Book(
+                "Clean Code", "Robert C. Martin", 464);
 
-        libraryService.addBook(FIRST);
-        libraryService.addBook(SECOND);
+        LibraryService service = new LibraryService();
+        service.addBook(dune);
+        service.addBook(nineteenEightyFour);
+        service.addBook(cleanCode);
 
-        System.out.println("we have " + libraryService.getBookCount() + " books");
+        System.out.println("Count: " + service.getBookCount());
 
-        for (Book book : libraryService.getallBooks())
-        {
-            System.out.println(book.getTitle());
-        }
-        Book found = libraryService.findBookByTitle("Dune");
-
+        Book found = service.findBookByTitle("Dune");
         if (found != null) {
-            System.out.println("found " + found.getTitle());
+            System.out.println("Found: " + found.getTitle());
         }
 
-        Book Missing = libraryService.findBookByTitle("De");
+        System.out.println("Loan Dune: "
+                + service.loanBook("Dune", 7));
+        System.out.println("Dune status: " + dune.getStatus());
 
-        if (Missing != null) {
-            System.out.println("Missing " + Missing.getTitle());
-        }
+        System.out.println("Loan missing: "
+                + service.loanBook("The Hobbit", 7));
+
+        System.out.println("Return Dune: "
+                + service.returnBook("Dune"));
+        System.out.println("Dune status: " + dune.getStatus());
+
         System.out.println("Remove Clean Code: "
-                + libraryService.removeBook("Clean Code"));
-        System.out.println("Remove again: "
-                + libraryService.removeBook("Clean Code"));
-        System.out.println("Books left: "
-                + libraryService.getBookCount());
-
+                + service.removeBook("Clean Code"));
+        System.out.println("Final count: "
+                + service.getBookCount());
     }
 }
