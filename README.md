@@ -46,3 +46,10 @@ libraryservices
 [book-tracker1-1.0-SNAPSHOT.jar](target/book-tracker1-1.0-SNAPSHOT.jar)
 
 
+## lab 4
+library service now has a List<book> 
+List<bok> is a list made to store book objects
+you can still add and remove books, it makes it so books cannot go to a diffrent list
+the loop goes through every book in the list
+searches for a book by its title, if exsists returns that book if it doesnt returns null 
+removebook needs to find the book and it uses findbookbytitle if book is found it removes it
