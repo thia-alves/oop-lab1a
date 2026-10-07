@@ -3,36 +3,23 @@ package ie.atu.oop.week2;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args)
-    {
-        System.out.println("hello OOP");
+    public static void main(String[] args) {
+        Book FIRST = new Book("Dune", "Frank Herbert", 412);
+        Book SECOND = new Book("De", "Fnk Hrt", 42);
+        LibraryService libraryService = new LibraryService();
 
-        Book firstBook = createBook("Dune","frank herbert",412);
-        Book secondBook = createBook("clean code","robert c",464);
-        Book thirdBook = createBook("the c programming language","kerlin and pitchie",274);
+        System.out.println(FIRST.getStatus());
+        libraryService.loanBook(FIRST,7);
+        System.out.println(FIRST.getStatus());
+        libraryService.ReturnBook(FIRST);
+        System.out.println(FIRST.getStatus());
+        System.out.println(SECOND.getStatus());
 
-       firstBook.displayDetails();
-       secondBook.displayDetails();
-       thirdBook.displayDetails();
-
-        System.out.println("\n");
-       firstBook.borrowBook();
-        System.out.println("\n");
-       firstBook.displayDetails();
-
-
-
-
-    }
-    private static Book createBook(String title, String author, int pageCount)
-    {
-        Book book = new Book();
-        book.title = title;
-        book.author = author;
-        book.pagecount = pageCount;
-        book.available = true;
-        return book;
+        try {
+            libraryService.loanBook(FIRST, 15);
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex.getMessage());
+        }
+        System.out.println(FIRST.getStatus());
     }
 }
-
-
