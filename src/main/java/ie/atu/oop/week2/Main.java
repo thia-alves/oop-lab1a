@@ -8,18 +8,25 @@ public class Main {
         Book SECOND = new Book("De", "Fnk Hrt", 42);
         LibraryService libraryService = new LibraryService();
 
-        System.out.println(FIRST.getStatus());
-        libraryService.loanBook(FIRST,7);
-        System.out.println(FIRST.getStatus());
-        libraryService.ReturnBook(FIRST);
-        System.out.println(FIRST.getStatus());
-        System.out.println(SECOND.getStatus());
+        libraryService.addBook(FIRST);
+        libraryService.addBook(SECOND);
 
-        try {
-            libraryService.loanBook(FIRST, 15);
-        } catch (IllegalArgumentException ex) {
-            System.out.println(ex.getMessage());
+        System.out.println("we have " + libraryService.getBookCount() + " books");
+
+        for (Book book : libraryService.getallBooks())
+        {
+            System.out.println(book.getTitle());
         }
-        System.out.println(FIRST.getStatus());
+        Book found = libraryService.findBookByTitle("Dune");
+
+        if (found != null) {
+            System.out.println("found " + found.getTitle());
+        }
+
+        Book Missing = libraryService.findBookByTitle("De");
+
+        if (Missing != null) {
+            System.out.println("Missing " + Missing.getTitle());
+        }
     }
 }
