@@ -5,7 +5,7 @@ package ie.atu.oop.week2;
 public class Main {
     public static void main(String[] args) {
         Book FIRST = new Book("Dune", "Frank Herbert", 412);
-        Book SECOND = new Book("De", "Fnk Hrt", 42);
+        Book SECOND = new Book("Clean Code", "Fnk Hrt", 42);
         LibraryService libraryService = new LibraryService();
 
         libraryService.addBook(FIRST);
@@ -28,5 +28,12 @@ public class Main {
         if (Missing != null) {
             System.out.println("Missing " + Missing.getTitle());
         }
+        System.out.println("Remove Clean Code: "
+                + libraryService.removeBook("Clean Code"));
+        System.out.println("Remove again: "
+                + libraryService.removeBook("Clean Code"));
+        System.out.println("Books left: "
+                + libraryService.getBookCount());
+
     }
 }
