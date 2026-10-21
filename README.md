@@ -53,3 +53,6 @@ you can still add and remove books, it makes it so books cannot go to a diffrent
 the loop goes through every book in the list
 searches for a book by its title, if exsists returns that book if it doesnt returns null 
 removebook needs to find the book and it uses findbookbytitle if book is found it removes it
+
+
+## lab 5
