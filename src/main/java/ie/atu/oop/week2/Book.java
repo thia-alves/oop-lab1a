@@ -54,5 +54,10 @@ public class Book {
         }
         status = BookStatus.AVAILABLE;
     }
+
+    public void remove(Book bookByTitle)
+    {
+
+    }
 }
 
