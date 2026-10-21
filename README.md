@@ -47,9 +47,28 @@ libraryservices
 
 
 ## lab 4
+
 library service now has a List<book> 
 List<bok> is a list made to store book objects
 you can still add and remove books, it makes it so books cannot go to a diffrent list
 the loop goes through every book in the list
 searches for a book by its title, if exsists returns that book if it doesnt returns null 
 removebook needs to find the book and it uses findbookbytitle if book is found it removes it
+
+
+## lab 5
+a throw statment inside the book shows that an error or invalid thing happened while a catch block handles the error thrown by another method.
+Path.of("data", "books.csv") makes a path showing the location of the cvs file in the data directory, getparent() gives the parent directory and
+readalllines() reads all the lines in the csv.
+lab 5 adds csv and exception handling which manages errors and invalid operations and stuff, csv lets bookj info be saved to a file and used again.
+unchecked NumberFormatException this happens when a string cant be made into a number java doesnt need it to be caught  or declared with throws.
+checked IOException this happens when the output or input operatuion fails.
+path means the location of the file.
+files means it gives static methods for performing file operations like reading or writing data
+1. title 
+2. author
+3. pagecount
+4. status
+ eg
+ dune,someguy,412,ON_LOAN
+
